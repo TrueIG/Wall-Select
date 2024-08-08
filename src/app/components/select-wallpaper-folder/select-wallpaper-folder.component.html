@@ -1,0 +1,5 @@
+<select (change)="onSelectFolder($event)">
+  @for (folder of foldersInCache; track folder.name) {
+    <option [value]="folder">{{ folder.name }}</option>
+  }
+</select>

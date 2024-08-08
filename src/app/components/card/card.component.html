@@ -1,0 +1,6 @@
+@for (image of folder.children; track $index) {
+  <div (click)="selectWallpaper($index)" class="container-image">
+    <img [src]="image.path" alt="" />
+    <p>{{ image.name }}</p>
+  </div>
+}

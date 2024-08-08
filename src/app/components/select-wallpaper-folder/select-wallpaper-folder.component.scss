@@ -1,0 +1,6 @@
+@import "../../shared/styles/mixins.scss";
+
+select {
+  @include button(300px);
+  border-radius: 0px 7px 7px 0px;
+}
