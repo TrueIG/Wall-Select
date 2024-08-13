@@ -1,16 +1,18 @@
+@use "variables" as va;
+@use "mixins" as mx;
+
 .container {
+
   position: fixed;
   bottom: 0;
-  background: rgba($color: #000000, $alpha: 0.5);
+  background: rgba(var(--secondary-color-rgb), 0.5);
   width: 100%;
   padding: 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: 0.5s;
   z-index: 1;
+  @include mx.centerXY;
 }
 
 .container:hover {
-  background: rgba($color: #000000, $alpha: 1.0);
+  background: rgba(var(--secondary-color-rgb), 1.0);
 }

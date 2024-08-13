@@ -5,13 +5,11 @@ mod prelude;
 mod utils;
 
 use error::FsError;
-use events::change_wallpaper;
-use events::create_wallpaper_folder;
+use events::{change_wallpaper, create_wallpaper_folder, get_gtk_theme};
 use prelude::FsError::BootstrapFailed;
-use utils::mod1::{create_dir, get_cache_folder};
+use utils::{create_dir, get_cache_folder};
 
 fn bootstrap(app_handle: tauri::AppHandle) -> Result<(), FsError> {
-    println!("ok");
     let app_cache = get_cache_folder(app_handle)
         .map_err(|e| BootstrapFailed(format!("Failed to get cache folder: {}", e)))?;
 
@@ -29,7 +27,8 @@ fn main() {
         })
         .invoke_handler(tauri::generate_handler![
             create_wallpaper_folder,
-            change_wallpaper
+            change_wallpaper,
+            get_gtk_theme
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

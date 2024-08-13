@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FoldersService } from '@services/cache/folders.service';
 import { FileEntry } from '@tauri-apps/api/fs';
-import { FoldersService } from '../../services/cache/folders.service';
 
 @Component({
   selector: 'app-select-wallpaper-folder',

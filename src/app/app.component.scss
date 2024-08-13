@@ -1,34 +1,26 @@
+@use "mixins" as mx;
+@use "functions" as fn;
+
 .main {
   display: flex;
   flex-direction: column-reverse;
 }
 
-$margin: 12px;
-$gap: 10px;
-
-@mixin column-count($count) {
-  column-count: $count;
-}
-
 .container-card {
-  margin: $margin;
-  column-gap: $gap;
-  margin-bottom: 5vh;
+  margin: fn.toRem(12);
+  column-gap: fn.toRem(10);
+  margin-bottom: fn.toRem(65);
+  column-count: 5;
 
-  @include column-count(5);
+  @include mx.responsive("large") {
+    column-count: 3;
+  }
 
-  @media screen {
-    @media (max-width:800px) {
-      @include column-count(3);
-    }
+  @include mx.responsive("medium") {
+    column-count: 2;
+  }
 
-    @media (max-width: 500px) {
-      @include column-count(2);
-    }
-
-    @media (max-width: 300px) {
-      @include column-count(1);
-    }
-
+  @include mx.responsive("small") {
+    column-count: 1;
   }
 }

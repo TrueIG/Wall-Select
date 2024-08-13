@@ -1,5 +1,17 @@
-<select (change)="onSelectFolder($event)">
-  @for (folder of foldersInCache; track folder.name) {
-    <option [value]="folder">{{ folder.name }}</option>
-  }
-</select>
+<div class="wrapper">
+  <select (change)="onSelectFolder($event)">
+    @for (folder of foldersInCache; track folder.name) {
+      <option [value]="folder">{{ folder.name }}</option>
+    }
+  </select>
+  <div class="down">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M5 9h14l-6.293 6.293a1 1 0 0 1-1.414 0Z"
+        fill="currentColor"
+        stroke="currentColor"
+        opacity="1"
+      />
+    </svg>
+  </div>
+</div>

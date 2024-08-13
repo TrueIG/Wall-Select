@@ -1,0 +1,32 @@
+@use "variables" as va;
+@use "mixins" as mx;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+  --primary-color: #{va.$primary-color};
+  --secondary-color: #{va.$secondary-color};
+  --secondary-color-rgb: #{rgb(red(va.$secondary-color), green(va.$secondary-color), blue(va.$secondary-color))};
+  --text-color: #{va.$text-color};
+}
+
+body,
+html {
+  background-color: var(--primary-color);
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+* {
+  font-family: "Fira Code", monospace;
+}
+
+button,
+select {
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  appearance: none;
+  @include mx.centerXY;
+  border: 2px solid var(--primary-color);
+}

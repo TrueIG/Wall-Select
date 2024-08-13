@@ -1,6 +1,24 @@
-@import "../../shared/styles/mixins.scss";
+@use "mixins" as mx;
+@use "functions" as fn;
 
 select {
-  @include button(300px);
+  @include mx.button(fn.toRem(300));
   border-radius: 0px 7px 7px 0px;
+  border-left: none;
+
+}
+
+.wrapper {
+  position: relative;
+
+  & svg {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: fn.toRem(30);
+    height: fn.toRem(30);
+    color: var(--text-color);
+  }
 }

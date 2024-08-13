@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { AddFolderComponent } from "../add-folder/add-folder.component";
-import { SelectWallpaperFolderComponent } from "../select-wallpaper-folder/select-wallpaper-folder.component";
+import { AddFolderComponent } from "@components/add-folder/add-folder.component";
+import { SelectWallpaperFolderComponent } from "@components/select-wallpaper-folder/select-wallpaper-folder.component";
 
 @Component({
   selector: 'app-bottom-bar',

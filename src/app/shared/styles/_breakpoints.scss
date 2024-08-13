@@ -1,0 +1,7 @@
+@use "./variables" as va;
+
+$breakpoints: (
+  "small": "(max-width: #{va.$small})",
+  "medium": "(max-width: #{va.$medium})",
+  "large": "(max-width: #{va.$large})",
+);

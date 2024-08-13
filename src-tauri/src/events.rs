@@ -1,7 +1,4 @@
-use crate::utils::{
-    mod1::{create_dir, get_cache_folder},
-    mod2::create_cache_wallpaper_folder,
-};
+use crate::utils::*;
 use std::process::Command;
 
 #[tauri::command]
@@ -28,4 +25,11 @@ pub fn change_wallpaper(wallpaper: &str) {
         ])
         .output()
         .expect("failed to execute process");
+}
+
+#[tauri::command]
+pub fn get_gtk_theme() -> String {
+    let output = Command::new("gtk-theme").output().expect("failed");
+
+    String::from_utf8(output.stdout).unwrap()
 }

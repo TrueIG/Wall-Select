@@ -1,7 +1,11 @@
+@use "variables" as va;
+@use "mixins" as mx;
+@use "functions" as fn;
+
 img {
   width: 100%;
-  border-radius: 7px;
-  margin-bottom: 10px;
+  border-radius: fn.toRem(7);
+  margin-bottom: fn.toRem(10);
 }
 
 .container-image {
@@ -17,26 +21,23 @@ img {
 
 p {
   opacity: 0.3;
-  color: white;
   position: absolute;
   left: 50%;
   bottom: calc(10% + 10px);
   transform: translateX(-50%);
-  background-color: rgba($color: #000000, $alpha: 0.3);
+  background-color: rgba(var(--secondary-color-rgb), 0.8);
   padding: 4px 2px;
 
-  @media screen {
-    @media (max-width:800px) {
-      font-size: 0.6rem;
-    }
-
-    @media (max-width: 500px) {
-      font-size: 0.7rem;
-    }
-
-    @media (max-width: 300px) {
-      font-size: 0.8rem;
-    }
-
+  @include mx.responsive("large") {
+    font-size: 0.9rem;
   }
+
+  @include mx.responsive("medium") {
+    font-size: 0.7rem;
+  }
+
+  @include mx.responsive("small") {
+    font-size: 0.8rem;
+  }
+
 }

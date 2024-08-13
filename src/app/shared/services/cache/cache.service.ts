@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { invoke } from '@tauri-apps/api';
-import { BaseDirectory, FileEntry, readDir, readTextFile, writeFile } from '@tauri-apps/api/fs';
+import { convertFileSrc, invoke } from '@tauri-apps/api/tauri';
 import { appCacheDir } from '@tauri-apps/api/path';
-import { convertFileSrc } from '@tauri-apps/api/tauri';
 import log from 'loglevel';
 import { UtilsService } from '../util/utils.service';
 import { FoldersService } from './folders.service';
+import { BaseDirectory, FileEntry, readDir, readTextFile, writeFile } from '@tauri-apps/api/fs';
 
 @Injectable({
   providedIn: 'root'

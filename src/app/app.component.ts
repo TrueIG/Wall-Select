@@ -1,8 +1,8 @@
 import { Component, } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { CardComponent } from "./components/card/card.component";
-import { BottomBarComponent } from "./components/bottom-bar/bottom-bar.component";
+import { CardComponent } from "@components/card/card.component";
+import { BottomBarComponent } from "@components/bottom-bar/bottom-bar.component";
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FoldersService } from '../../services/cache/folders.service';
-import { FileEntry } from '@tauri-apps/api/fs';
+import { FoldersService } from '@services/cache/folders.service';
 import { invoke } from '@tauri-apps/api';
+import { FileEntry } from '@tauri-apps/api/fs';
 
 @Component({
   selector: 'app-card',

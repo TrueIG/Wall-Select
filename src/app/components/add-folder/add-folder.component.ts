@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SelectFolderService } from '../../services/util/select-folder.service';
-import { CacheService } from '../../services/cache/cache.service';
+import { SelectFolderService } from '@services/util/select-folder.service';
+import { CacheService } from '@services/cache/cache.service';
 
 @Component({
   selector: 'app-add-folder',

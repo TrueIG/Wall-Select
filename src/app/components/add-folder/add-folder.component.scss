@@ -1,6 +1,29 @@
-@import "../../shared/styles/mixins.scss";
+@use "mixins" as mx;
 
 button {
-  @include button(100px);
+  @include mx.button(100px);
   border-radius: 7px 0px 0px 7px;
+  text-align: center;
+  border-right: none;
+
+  svg {
+    width: 22px;
+    display: none;
+    color: red;
+    fill: currentColor;
+  }
+
+
+
+  &:hover {
+    svg {
+      display: inline-block;
+      color: var(--text-color);
+    }
+
+    span {
+      display: none;
+    }
+  }
+
 }
